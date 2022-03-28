@@ -21,7 +21,7 @@ def boten(message):
     
     mas = types.InlineKeyboardMarkup(row_width=2)
     
-    A = types.InlineKeyboardButton(text ="CHECKER (IRAN)", callback_data="F1")
+    A = types.InlineKeyboardButton(text ="HUNTER FACEBOOK", callback_data="F1")
     
     E = types.InlineKeyboardButton(text ="CHECKER (IRAQ)", callback_data="F2")
     
@@ -42,7 +42,7 @@ def masg(call):
 		
 		mas = types.InlineKeyboardMarkup(row_width=2)
 		
-		A = types.InlineKeyboardButton(text ="CHECKER (IRAN)", callback_data="F1")
+		A = types.InlineKeyboardButton(text ="HUNTER FACCEBOOK", callback_data="F1")
 
 		E = types.InlineKeyboardButton(text ="CHECKER (IRAQ)", callback_data="F2")
 		
