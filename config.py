@@ -1,2 +1,2 @@
-BOT_TOKEN = "5216718247:AAHNYedTI56Hh-6zEXukUQzVx5bMlTtg1RA"
-APP_URL = "https://facebockbot.herokuapp.com/" + BOT_TOKEN
+BOT_TOKEN = "5065941433:AAExTSbteMGLp0yt7oAJ3V0oOE5c62uI-zw"
+APP_URL = "https://coinspy.herokuapp.com/" + BOT_TOKEN
