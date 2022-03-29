@@ -70,17 +70,17 @@ def masg(call):
 				if int(coin) > 400:
 					bot.send_message(call.message.chat.id,f"‹ [✓] {id} Coins ==> {coin} =====>• @t_4gi")
 				
-		else:
-			cp+=1
-			sk+=1
-			mas = types.InlineKeyboardMarkup(row_width=2)
-			A = types.InlineKeyboardButton(f'GOOD : {ok}',callback_data="1x")
-			E = types.InlineKeyboardButton(f'EROR : {cp}', callback_data="1x")
-			B = types.InlineKeyboardButton(f'{id}', callback_data="1x")
-			R = types.InlineKeyboardButton(f'{sk}', callback_data="1x")
-			M = types.InlineKeyboardButton('المطور', url='https://t.me/t_4gi')
-			mas.add(A,E,B,R,M)
-			bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id,text="ok start",reply_markup=mas)
+			else:
+				cp+=1
+				sk+=1
+				mas = types.InlineKeyboardMarkup(row_width=2)
+				A = types.InlineKeyboardButton(f'GOOD : {ok}',callback_data="1x")
+				E = types.InlineKeyboardButton(f'EROR : {cp}', callback_data="1x")
+				B = types.InlineKeyboardButton(f'{id}', callback_data="1x")
+				R = types.InlineKeyboardButton(f'{sk}', callback_data="1x")
+				M = types.InlineKeyboardButton('المطور', url='https://t.me/t_4gi')
+				mas.add(A,E,B,R,M)
+				bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id,text="جاري فحص النقاط ",reply_markup=mas)
 				
 			
 		
@@ -174,5 +174,5 @@ def redirect_message():
 
 if __name__ == "__main__":
     bot.remove_webhook()
-    bot.set_webhook(url="https://coinspy.herokuapp.com/"+str(BOT_TOKEN))
+    bot.set_webhook(url="hhttps://coinspy.herokuapp.com/"+str(BOT_TOKEN))
     server.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
